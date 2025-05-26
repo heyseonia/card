@@ -1,0 +1,24 @@
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+*{padding: 0;margin: 0;box-sizing: border-box;-webkit-box-sizing: border-box;color: #333;}
+body{background: #eee;font-family: "Noto Sans KR", sans-serif;}
+ul,ol{list-style: none;}
+a{list-style: none;text-decoration: none;outline: none;}
+
+.btn{border: none;display: block;cursor: pointer;}
+
+.flex{display: flex;}
+.center{flex-direction: column;justify-content: center;align-items: center;}
+.left{justify-content: left;}
+.right{justify-content: right;}
+
+h2{text-align: center;}
+
+header,footer{padding: 2rem;}
+footer .tit{font-size:0.8rem;}
+
+
+/* nameCardWrap */
+.nameCardWrap{background:#fff;min-width: 400px;height: auto;padding: 20px;}
+.nameCardWrap .nameCardTxt{border: 5px dashed #eee;padding: 20px;}

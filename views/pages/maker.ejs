@@ -1,0 +1,32 @@
+
+<div class="nameCardMaker">
+    <!-- <img src="/images/logo.png" alt=""> -->
+    <div class="nameCardTxt">
+        <p><span>테 스트</span><span>부서/직급</span></p>
+        <p><span>Email.</span><span><%= email %></span></p>
+        <p><span>Email.</span><span><%= email %></span></p>
+        <p><span>Address.</span><span><%= email %></span></p>
+    </div>
+</div>
+
+<div class="nameCardView">
+    <!-- <img src="/images/logo.png" alt=""> -->
+    <div class="nameCardTxt">
+        <p><span>테 스트</span><span>부서/직급</span></p>
+        <p><span>Email.</span><span><%= email %></span></p>
+        <p><span>Email.</span><span><%= email %></span></p>
+        <p><span>Address.</span><span><%= email %></span></p>
+    </div>
+</div>
+
+<button class="btn" onclick="confirm()">명함 완성</button>
+
+<script>
+    const email = localStorage.getItem('email')
+    console.log('maker'+ email);
+
+    const confirm = async() => {
+        window.location.href = `/view?email=${email}`
+    }
+
+</script>

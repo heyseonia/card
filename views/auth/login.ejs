@@ -1,0 +1,43 @@
+<div class="loginBox">
+    <h2>로그인</h2>
+    <ul>
+        <!-- <li><button class="btn btnLogin" type="button" onclick="">로그인</button></li> -->
+        <li><button class="btn btnGoogle" type="button" onclick="loginBtnGoogle()">구글로그인</button></li>
+        <li><button class="btn btnKakao" type="button" onclick="loginBtnKakao()">카카오로그인</button></li>
+    </ul>
+</div>
+
+<script type="module">
+    import AuthLogic, { loginGoogle } from '/javascripts/authLogic.js'
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-auth.js"
+    import { app } from '/javascripts/firebase.js'
+
+    const authLogic = new AuthLogic()//사용자 정의 클래스
+    const auth = getAuth(app) //AuthLogic생성자 함수 선언된 전변
+
+    const goToMaker = (userEmail) => {
+        window.location.href = `/maker?email=${userEmail}`
+    }
+
+    const loginBtnGoogle = async() =>{
+        console.log('구글로그인클릭!!');
+        try{
+            const user = await loginGoogle(authLogic.auth, authLogic.googleProvider)
+            console.log(user);
+            localStorage.setItem("uid", user.uid)
+            localStorage.setItem("email", user.email)
+            if(user.email){
+                goToMaker(user.email)
+            }
+        }catch(error){
+            console.error('구글로그인 실패',error);
+        }
+    }
+
+    const loginBtnKakao = async() =>{
+        console.log('카카오로그인클릭!!');
+    }
+
+    window.loginBtnGoogle = loginBtnGoogle
+    window.loginBtnKakao = loginBtnKakao
+</script>
