@@ -8,17 +8,17 @@ router.get('/', function(req, res, next) {
 
 // maker
 router.get('/maker', function(req,res,next){
-  const email = req.query.email
-  if(!email){return res.redirect('/')}
-  res.render('index',{title: 'Maker', pageName: 'pages/maker.ejs', email: email})
-  console.log('라우터' +email);
+  const userId = req.query.id
+  if(!userId){return res.redirect('/')}
+  res.render('index',{title: 'Maker', pageName: 'pages/maker.ejs', userId: userId})
+  console.log('라우터' + userId);
 });
 
 // view
 router.get('/view', function(req,res,next){
-  const email = req.query.email
-  if(!email){return res.redirect('/')}
-  res.render('index',{title: 'Maker', pageName: 'pages/view.ejs', email: email})
+  const userId = req.query.id
+  if(!userId){return res.redirect('/')}
+  res.render('index',{title: 'View', pageName: 'pages/view.ejs', userId: userId})
 });
 
 module.exports = router;

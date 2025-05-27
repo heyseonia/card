@@ -5,14 +5,15 @@
     <!-- <img src="/images/logo.png" alt=""> -->
     <div class="nameCardTxt">
         <p><span>테 스트</span><span>부서/직급</span></p>
-        <p><span>Email.</span><span><%= email %></span></p>
-        <p><span>Email.</span><span><%= email %></span></p>
-        <p><span>Address.</span><span><%= email %></span></p>
+        <p><span>Email.</span><span></span></p>
+        <p><span>Email.</span><span></span></p>
+        <p><span>Address.</span><span></span></p>
     </div>
 </div>
 
+<script type="module" src="./javascripts/maker.js"></script>
 <script>
-    const email = localStorage.getItem('email')
-    console.log('maker'+ email);
-    
+    const userId = localStorage.getItem('userId')
+    console.log('maker'+ userId);
+
 </script>
