@@ -1,14 +1,41 @@
 <header class="header">
     <!-- <img class="logo" src="/images/logo.png" alt="logo"> -->
     <h1>Mobile NameCard Maker</h1>
+    <div id="topCon">
+        <button id="logout" class="btn logout none">로그아웃</button>
+    </div>
 </header>
 
-<script>
-    const userId = window.localStorage.getItem('userId')
-    if(userId){
-        console.log('userId 담기완료!!');
-        document.write('<button id="logout" class="btn logout" href="/logout">로그아웃</button>')
-    }else{
-        // document.write('<button id="login" class="btn login" href="/lgoin">로그인</button>')
+<script type="module">
+import { app } from './javascripts/firebase.js';
+import AuthLogic, { logout } from './javascripts/authLogic.js';
+
+const userId = window.localStorage.getItem('userId')
+const topCon = document.querySelector('#topCon');
+const logoutBtn = document.querySelector('#logout');
+
+// isLoggedIn
+if (userId) {
+    console.log('로그인된 사용자:', userId)
+    logoutBtn.classList.remove('none')
+} else{
+    console.log('로그인되지 않은 사용자')
+    logoutBtn.classList.add('none')
+}
+
+// 로그아웃 이벤트 핸들러
+const authLogic = new AuthLogic(app)
+const logoutEvent = async(e) => {
+    e.preventDefault()
+    try {
+        await logout(authLogic.getUserAuth())
+        window.localStorage.removeItem('userId')
+        window.location.href = '/'
+    } catch (error) {
+        console.error('로그아웃 실패:', error)
     }
+}
+
+logoutBtn.addEventListener('click', logoutEvent)
+
 </script>

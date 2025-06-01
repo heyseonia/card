@@ -1,4 +1,4 @@
-import { getAuth, GithubAuthProvider, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/11.7.3/firebase-auth.js'
+import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from 'https://www.gstatic.com/firebasejs/11.7.3/firebase-auth.js'
 class AuthLogic{
     //아래 생성자 함수는 AuthLogic 생성될 때 호출된다.
     //생성될 때 -> const authLogic = new AuthLogic()

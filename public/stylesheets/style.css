@@ -2,26 +2,65 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
 
 *{padding: 0;margin: 0;box-sizing: border-box;-webkit-box-sizing: border-box;color: #333;}
-body{background: #eee;font-family: "Noto Sans KR", sans-serif;}
+body{background: #eee;font-family: "Cascadia Code", sans-serif;}
 ul,ol{list-style: none;}
 a,button{list-style: none;text-decoration: none;outline: none;}
-
-.btn{border: none;display: block;cursor: pointer;}
 
 .flex{display: flex;}
 .center{flex-direction: column;justify-content: center;align-items: center;}
 .left{justify-content: left;}
 .right{justify-content: right;}
+h1{font-family: 'GmarketSansMedium';letter-spacing: -1px;color: #556081;}
+h2{font-family: 'GmarketSansMedium';text-align: center;}
+.none{display: none!important;}
 
-h2{text-align: center;}
-
-header,footer{padding: 2rem;}
+header,footer{padding: 2rem 2rem 1rem;}
 footer .tit{font-size:0.8rem;}
+
+/* button */
+.btn{font-family: 'GmarketSansMedium';border: none;display: block;cursor: pointer;}
+.btnConfirm,.btnMaker,.btnPreview{width: 400px;padding: 15px 0;background: #556081;border-radius:5px;color:#fff;font-size: 15px;}
+.btnKakao img{width: 300px;}
+.logout{float: right;margin-top:10px;padding: 5px 10px;}
+
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&display=swap');
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 /* nameCardWrap */
 .loginBox ul li{margin:10px;}
-.makerCon{background:#fff;min-width: 400px;height: auto;padding: 20px;}
+.makerCon{font-family: 'GmarketSansMedium';background:#fff;border-radius:5px;width: 400px;height: auto;padding: 20px;margin: 0 0 15px;}
 .nameCardWrap .nameCardTxt{border: 5px dashed #eee;padding: 20px;}
+
+.makerCon .itemList{margin: 15px 0;}
+.makerCon .itemList .cardTit{font-size: 12px;}
+.makerCon .itemList .inputText{width: 100%;border: none;border-bottom: 1.5px solid #000;outline: none;padding: 5px 0 10px;font-size: 16px;}
+.nameCardMakerTop .cardTit{font-family: 'GmarketSansMedium';font-size: 12px;}
+.nameCardMakerTop .inputText{width: 100%;border: none;background:transparent;border-bottom: 1.5px solid #000;outline: none;padding: 5px 0 10px;font-size: 16px;}
+
+/* nameCardList */
+.nameCardList ul {font-family: 'GmarketSansMedium';width: 400px;}
+.nameCardList ul li{margin:10px 0;}
+.nameCardList ul li a{display:block;background: #fff url(./../images/arrow_right.png) no-repeat center right 15px;background-size:25px;border-radius: 5px;padding: 20px 45px 20px 15px;color:#000;font-size: 15px;}
+
+.nameCardPreView{background: linear-gradient(#556081 30%,#fff 30%);min-height: 530px;}
+.nameCardPreView .con{text-align: center;color: #000;}
+.nameCardPreView .con p{word-wrap: break-word;word-break: break-all;}
+.nameCardPreView .con .tit{margin:30px 0 10px;font-size: 22px;letter-spacing: -0.5px;color:#fff;}
+.nameCardPreView .con .name{margin:10px 0 5px;font-size: 16px;letter-spacing: -0.5px;}
+.nameCardPreView .con .team{margin:5px 0;font-size: 12px;letter-spacing: -0.5px;color: #929292;}
+.nameCardPreView .con .proImgWrap{width: 148px;height: 148px;border: none;border-radius: 50%;overflow: hidden;margin: 0 auto;}
+.nameCardPreView .con .proImgWrap .proImg{background: #556081;width: 152px;height: 152px;}
+.nameCardPreView .con ul{width: 300px;margin: 30px 0 30px 50px;}
+.nameCardPreView .con ul li{display: flex;align-items: center;margin-bottom: 20px;}
+.nameCardPreView .con ul li .icon{width: 25px;margin-right: 20px;}
+.nameCardPreView .con ul li .text{word-wrap: break-word;word-break: break-all;text-align: left;font-size: 14px;color: #556081;}
+.nameCardPreView .con ul li .text.snsText{font-size: 12px;}
 
 /* 구글로그인 */
 .gsi-material-button {
@@ -113,10 +152,4 @@ footer .tit{font-size:0.8rem;}
 
 .gsi-material-button:disabled .gsi-material-button-icon {
   opacity: 38%;
-}
-
-.gsi-material-button:not(:disabled):active .gsi-material-button-state, 
-.gsi-material-button:not(:disabled):focus .gsi-material-button-state {
-  background-color: #001d35;
-  opacity: 12%;
 }

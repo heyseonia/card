@@ -6,12 +6,18 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express', pageName: 'auth/login.ejs' });
 });
 
+// list
+router.get('/list', function(req,res,next){
+  const userId = req.query.id
+  if(!userId){return res.redirect('/')}
+  res.render('index',{title: 'list', pageName: 'pages/list.ejs', userId: userId})
+});
+
 // maker
 router.get('/maker', function(req,res,next){
   const userId = req.query.id
   if(!userId){return res.redirect('/')}
   res.render('index',{title: 'Maker', pageName: 'pages/maker.ejs', userId: userId})
-  console.log('라우터' + userId);
 });
 
 // view

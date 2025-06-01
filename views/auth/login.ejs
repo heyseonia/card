@@ -14,13 +14,14 @@
                         <path fill="none" d="M0 0h48v48H0z"></path>
                     </svg>
                     </div>
-                    <span class="gsi-material-button-contents">Sign in with Google</span>
-                    <span style="display: none;">Sign in with Google</span>
+                    <span class="gsi-material-button-contents">Login in with Google</span>
                 </div>
             </button>
         </li>
         <!-- <li><button class="btn btnLogin" type="button" onclick="">로그인</button></li> -->
-        <li><button class="btn btnKakao" type="button" onclick="loginBtnKakao()"><img src="./images/loginKakao.png" alt="카카오로그인"></button></li>
+        <li>
+            <button class="btn btnKakao" type="button" onclick="loginBtnKakao()"><img src="./images/kakao_login.png" alt="카카오로그인"></button>
+        </li>
     </ul>
 </div>
 
@@ -32,8 +33,8 @@
     const authLogic = new AuthLogic()//사용자 정의 클래스
     const auth = getAuth(app) //AuthLogic생성자 함수 선언된 전변
 
-    const goToMaker = (userId) => {
-        window.location.href = `/maker?id=${userId}`
+    const goToList = (userId) => {
+        window.location.href = `/list?id=${userId}`
     }
 
     const loginBtnGoogle = async() =>{
@@ -43,7 +44,7 @@
             localStorage.setItem("userId", user.uid)
             localStorage.setItem("email", user.email)
             if(user.uid){
-                goToMaker(user.uid)
+                goToList(user.uid)
                 console.log('test');
             }
         }catch(error){
