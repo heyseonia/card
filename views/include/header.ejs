@@ -1,8 +1,9 @@
 <header class="header">
     <!-- <img class="logo" src="/images/logo.png" alt="logo"> -->
-    <h1>Mobile NameCard Maker</h1>
-    <div id="topCon">
-        <button id="logout" class="btn logout none">로그아웃</button>
+    <h1>Mobile<br>NameCard<br>Maker</h1>
+    <div id="topCon" class="userInfo none">
+        <span class="name">님</span>
+        <button id="logout" class="btn logout">로그아웃</button>
     </div>
 </header>
 
@@ -11,16 +12,19 @@ import { app } from './javascripts/firebase.js';
 import AuthLogic, { logout } from './javascripts/authLogic.js';
 
 const userId = window.localStorage.getItem('userId')
-const topCon = document.querySelector('#topCon');
-const logoutBtn = document.querySelector('#logout');
+const userEmail = window.localStorage.getItem('email')
+const topCon = document.querySelector('#topCon')
+const userInfo = document.querySelector('.userInfo')
+const logoutBtn = document.querySelector('#logout')
 
 // isLoggedIn
 if (userId) {
     console.log('로그인된 사용자:', userId)
-    logoutBtn.classList.remove('none')
+    document.querySelector('.name').textContent = userEmail+' 님'
+    userInfo.classList.remove('none')
 } else{
     console.log('로그인되지 않은 사용자')
-    logoutBtn.classList.add('none')
+    userInfo.classList.add('none')
 }
 
 // 로그아웃 이벤트 핸들러

@@ -32,7 +32,7 @@ onValue(ref(db, `card/${id}`), (snapshot) => {
     const li = document.createElement('li');
     const a = document.createElement('a');
     a.href = `/view?id=${id}&key=${childSnapshot.key}`;
-    a.textContent = card.cardTit || card.cardDir || '카드네임이 없습니다.';
+    a.textContent = card.cardTit || card.cardName || '카드네임이 없습니다.';
     li.appendChild(a);
     list.appendChild(li);
   });

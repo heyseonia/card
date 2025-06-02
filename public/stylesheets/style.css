@@ -6,22 +6,31 @@ body{background: #eee;font-family: "Cascadia Code", sans-serif;}
 ul,ol{list-style: none;}
 a,button{list-style: none;text-decoration: none;outline: none;}
 
-.flex{display: flex;}
+.flex{display: flex;width: 100%;}
 .center{flex-direction: column;justify-content: center;align-items: center;}
 .left{justify-content: left;}
 .right{justify-content: right;}
 h1{font-family: 'GmarketSansMedium';letter-spacing: -1px;color: #556081;}
 h2{font-family: 'GmarketSansMedium';text-align: center;}
 .none{display: none!important;}
+.w100{width: 100%!important;}
 
-header,footer{padding: 2rem 2rem 1rem;}
-footer .tit{font-size:0.8rem;}
+header,footer{width: 100%;margin:0 auto}
+header h1{margin: 15px 0;font-size: 28px;}
+footer{margin: 30px auto;}
+footer .tit{font-size:0.8rem;text-align: center;}
+.inner{max-width: 400px;width: 100%;min-width: 300px;padding: 0 10px;margin: 0 auto;}
 
 /* button */
 .btn{font-family: 'GmarketSansMedium';border: none;display: block;cursor: pointer;}
-.btnConfirm,.btnMaker,.btnPreview,.btnList{width: 400px;padding: 15px 0;background: #556081;border-radius:5px;color:#fff;font-size: 15px;}
-.btnKakao img{width: 300px;}
-.logout{float: right;margin-top:10px;padding: 5px 10px;}
+.btnConfirm,.btnMaker,.btnPreview,.btnList{width: 100%;padding: 15px 0;background: #556081;border-radius:5px;color:#fff;font-size: 15px;}
+.btnKakao img{width: 100%;}
+
+/* userInfo */
+.userInfo{font-family: 'GmarketSansMedium';margin:10px 0;overflow: hidden;font-size: 15px;}
+.userInfo .name{float: left;position: relative}
+.userInfo .name:after {content: '';position: absolute;bottom: 0;left: 0;width: 100%;height: 40%;background-color: #5560814f;z-index: -1;}
+.userInfo .logout{float: right;padding: 5px 10px;font-weight: bold;font-size: 15px;}
 
 /* font */
 @import url('https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&display=swap');
@@ -33,10 +42,9 @@ footer .tit{font-size:0.8rem;}
 }
 
 /* nameCardWrap */
-.loginBox ul li{margin:10px;}
-.makerCon{font-family: 'GmarketSansMedium';background:#fff;border-radius:5px;width: 400px;height: auto;padding: 20px;margin: 0 0 15px;}
+.loginBox ul li{margin-bottom:10px;width: 400px;}
+.makerCon{font-family: 'GmarketSansMedium';background:#fff;border-radius:5px;width: 100%;height: auto;padding: 20px;margin: 0 0 15px;}
 .nameCardWrap .nameCardTxt{border: 5px dashed #eee;padding: 20px;}
-
 .makerCon .itemList{margin: 15px 0;}
 .makerCon .itemList .cardTit{font-size: 12px;}
 .makerCon .itemList .inputText{width: 100%;border: none;border-bottom: 1.5px solid #000;outline: none;padding: 5px 0 10px;font-size: 16px;}
@@ -44,19 +52,18 @@ footer .tit{font-size:0.8rem;}
 .nameCardMakerTop .inputText{width: 100%;border: none;background:transparent;border-bottom: 1.5px solid #000;outline: none;padding: 5px 0 10px;font-size: 16px;}
 
 /* nameCardList */
-.nameCardList ul {font-family: 'GmarketSansMedium';width: 400px;}
+.nameCardList{font-family: 'GmarketSansMedium';width: 100%;}
 .nameCardList ul li{margin:10px 0;}
 .nameCardList ul li a{display:block;background: #fff url(./../images/arrow_right.png) no-repeat center right 15px;background-size:25px;border-radius: 5px;padding: 20px 45px 20px 15px;color:#000;font-size: 15px;}
-
-.nameCardPreView{background: linear-gradient(#556081 30%,#fff 30%);min-height: 530px;}
+.nameCardPreView{background: linear-gradient(#556081 30%,#fff 30%);min-height: 530px;width: 100%;}
 .nameCardPreView .con{text-align: center;color: #000;}
 .nameCardPreView .con p{word-wrap: break-word;word-break: break-all;}
-.nameCardPreView .con .tit{margin:30px 0 10px;font-size: 22px;letter-spacing: -0.5px;color:#fff;}
+.nameCardPreView .con .tit{height:29px;margin:30px 0 10px;font-size: 22px;letter-spacing: -0.5px;color:#fff;}
 .nameCardPreView .con .name{margin:10px 0 5px;font-size: 16px;letter-spacing: -0.5px;}
 .nameCardPreView .con .team{margin:5px 0;font-size: 12px;letter-spacing: -0.5px;color: #929292;}
 .nameCardPreView .con .proImgWrap{width: 148px;height: 148px;border: none;border-radius: 50%;overflow: hidden;margin: 0 auto;}
 .nameCardPreView .con .proImgWrap .proImg{background: #556081;width: 152px;height: 152px;}
-.nameCardPreView .con ul{width: 300px;margin: 30px 0 30px 50px;}
+.nameCardPreView .con ul{width: 80%;margin: 30px 0 30px 10%;}
 .nameCardPreView .con ul li{display: flex;align-items: center;margin-bottom: 20px;}
 .nameCardPreView .con ul li .icon{width: 25px;margin-right: 20px;}
 .nameCardPreView .con ul li .text{word-wrap: break-word;word-break: break-all;text-align: left;font-size: 14px;color: #556081;}
@@ -77,8 +84,8 @@ footer .tit{font-size:0.8rem;}
   box-sizing: border-box;
   color: #1f1f1f;
   cursor: pointer;
-  font-family: 'Roboto', arial, sans-serif;
-  font-size: 14px;
+  font-family: 'GmarketSansMedium', arial, sans-serif;
+  font-size: 18px;
   height: 40px;
   letter-spacing: 0.25px;
   outline: none;
@@ -90,14 +97,13 @@ footer .tit{font-size:0.8rem;}
   transition: background-color .218s, border-color .218s, box-shadow .218s;
   vertical-align: middle;
   white-space: nowrap;
-  width: auto;
-  max-width: 400px;
-  min-width: min-content;
+  width: 400px;
+  height: 60px;
 }
 
 .gsi-material-button .gsi-material-button-icon {
   height: 20px;
-  margin-right: 12px;
+  margin-left: 12px;
   min-width: 20px;
   width: 20px;
 }

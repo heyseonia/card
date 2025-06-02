@@ -3,12 +3,15 @@
   <head>
     <title>Mobile NameCard Maker</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/javascripts/global.js"></script>
   </head>
   <body>
-    <div class="flex center">
-      <%-include('include/header.ejs') %>
-      <%-include(pageName) %>
-      <%-include('include/footer.ejs') %>
+    <div class="inner">
+      <div class="flex center">
+        <%-include('include/header.ejs') %>
+          <%-include(pageName) %>
+        <%-include('include/footer.ejs') %>
+      </div>
     </div>
   </body>
 </html>
