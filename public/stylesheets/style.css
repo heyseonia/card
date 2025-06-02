@@ -54,7 +54,7 @@ footer .tit{font-size:0.8rem;text-align: center;}
 /* nameCardList */
 .nameCardList{font-family: 'GmarketSansMedium';width: 100%;}
 .nameCardList ul li{margin:10px 0;}
-.nameCardList ul li a{display:block;background: #fff url(./../images/arrow_right.png) no-repeat center right 15px;background-size:25px;border-radius: 5px;padding: 20px 45px 20px 15px;color:#000;font-size: 15px;}
+.nameCardList ul li a{display:block;background: #fff url(./../images/arrow_right.png) no-repeat center right 15px;background-size:20px;border-radius: 5px;padding: 20px 45px 20px 15px;color:#000;font-size: 15px;}
 .nameCardPreView{background: linear-gradient(#556081 30%,#fff 30%);min-height: 530px;width: 100%;}
 .nameCardPreView .con{text-align: center;color: #000;}
 .nameCardPreView .con p{word-wrap: break-word;word-break: break-all;}

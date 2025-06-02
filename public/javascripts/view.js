@@ -11,6 +11,11 @@ onValue(ref(db, `card/${id}/${key}`), (snapshot) => {
     let contents = []
     contents = snapshot.val()
     console.log(contents);
+    if(!contents){
+        alert('명함이 삭제되었습니다.')
+        location.href = '/'
+    }
+
     // 데이터바인딩
     document.querySelector('#viewTit').textContent = contents.cardTit || ''
     document.querySelector('#viewName').textContent = contents.cardName || ''
