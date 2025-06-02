@@ -51,6 +51,8 @@ footer .tit{font-size:0.8rem;text-align: center;}
 .nameCardMakerTop .cardTit{font-family: 'GmarketSansMedium';font-size: 12px;}
 .nameCardMakerTop .inputText{width: 100%;border: none;background:transparent;border-bottom: 1.5px solid #000;outline: none;padding: 5px 0 10px;font-size: 16px;}
 
+.nameCardMaker .inputColor{background: transparent;border: none;float: right;width: 50px;height: 30px;margin-top:-5px;margin: 0;padding: 0;}
+
 /* nameCardList */
 .nameCardList{font-family: 'GmarketSansMedium';width: 100%;}
 .nameCardList ul li{margin:10px 0;}

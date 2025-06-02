@@ -1,6 +1,10 @@
 <div class="maker  w100">
     <div class="nameCardMaker makerCon">
         <div class="itemList">
+            <label for="color-picker" class="cardTit">card color.</label>
+            <input type="color" id="color-picker" class="inputColor">
+        </div>
+        <div class="itemList">
             <p class="cardTit">card name.</p>
             <input id="cardTit" type="text" class="inputText">
         </div>
@@ -30,7 +34,7 @@
         </div>
         <div class="itemList">
             <p class="cardTit">Photo.</p>
-            <input id="cardPhoto" type="file" class="inputText">
+            <input id="cardPhoto" type="file" name="file" class="inputText" placeholder="파일선택">
         </div>
     </div>
     <button id="btnPreview" class="btn btnPreview" type="button">명함 미리보기</button>

@@ -6,6 +6,13 @@ const id = params.get('id');
 
 console.log(id);
 
+const colorPicker = document.getElementById('color-picker');
+let cardColor = ''
+colorPicker.addEventListener('input', function () {
+    console.log('Selected color:', this.value);
+    cardColor = this.value
+});
+
 const preView = () => {
     const file = document.querySelector('#cardPhoto').files[0]; // file 선언!
     
@@ -18,6 +25,7 @@ const preView = () => {
         cardAdd: document.querySelector('#cardAdd').value,
         cardPhone: document.querySelector('#cardPhone').value,
         cardSns: document.querySelector('#cardSns').value,
+        cardColor: cardColor,
         cardPhoto: '' // Base64 문자열로 채울 예정
     };
 
@@ -58,6 +66,7 @@ function toggleView() {
             document.querySelector('#viewPhone').textContent = data.cardPhone;
             document.querySelector('#viewAdd').textContent = data.cardAdd;
             document.querySelector('#viewSns').textContent = data.cardSns;
+            cardColor = data.cardColor
         
             // 이미지 렌더링
             const img = document.querySelector('#viewPhoto');
@@ -103,6 +112,7 @@ const confirm = async(e) =>{
         cardPhone: data.cardPhone,
         cardSns: data.cardSns,
         cardPhoto: data.cardPhoto,
+        cardColor: data.cardColor
     }
     try {
         const newCardRef = push(ref(db, `card/${id}/`)); // 고유 경로 생성
