@@ -1,51 +1,6 @@
 <div class="nameCardList">
-  <ul>
-    
-  </ul>
+  <ul></ul>
   <button id="btnMaker" class="btn btnMaker" type="button">명함 만들기</button>
 </div>
 
-<script type="module">
-  import { app } from '/javascripts/firebase.js'
-  import { getDatabase, onValue, remove, ref } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-database.js"
-  const db = getDatabase(app)
-
-  const btnMaker = document.querySelector('#btnMaker');
-  const params = new URLSearchParams(window.location.search);
-  const id = params.get('id');
-
-  if (btnMaker) {
-    btnMaker.addEventListener('click', () => {
-      window.location.href = `/maker?id=${id}`;
-    });
-  }
-
-  onValue(ref(db, `card/${id}`), (snapshot) => {
-    
-    const list = document.querySelector('.nameCardList ul');
-    list.innerHTML = '';
-
-    //꺼내온 데이터를 핸들바스와 머지해야 하므로 반복문이 필요함.
-    //그래서 데이터를 담을 배열을 하나 선언하지
-    let cards = []
-    snapshot.forEach(childSnapshot => {
-      const card = childSnapshot.val();
-      card.key = childSnapshot.key;
-      cards.push(card);
-
-      const li = document.createElement('li');
-      const a = document.createElement('a');
-
-      a.href = `/view?id=${id}&key=${childSnapshot.key}`; // 카드 상세 페이지 등으로 이동할 수 있음
-      a.textContent = card.cardName || '이름 없음';
-
-      li.appendChild(a);
-      list.appendChild(li);
-    });
-  
-    console.log(cards);
-  })
-
-
-
-</script>
+<script type="module" src="./javascripts/list.js"></script>

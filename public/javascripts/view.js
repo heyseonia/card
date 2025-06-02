@@ -1,37 +1,35 @@
-import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-database.js";
+import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-database.js";
 import { app } from './firebase.js';
 
-// const authLogic = new AuthLogic()//사용자 정의 클래스
-// const auth = getAuth(app) //AuthLogic생성자 함수 선언된 전변
-
 const db = getDatabase(app)
+const params = new URLSearchParams(window.location.search)
+const id = params.get('id')
+const key = params.get('key')
 
-// maker confirm
-const confirm = async(e) =>{
-    e.preventDefault()
-    const uid = localStorage.getItem('uid')
-    const userData = {
-        uid: uid,
-        cardName: document.querySelector('#cardName').value,
-        cardDir: document.querySelector('#cardDir').value,
-        cardEmail: document.querySelector('#cardEmail').value,
-        cardAdd: document.querySelector('#cardAdd').value,
-        cardPhone: document.querySelector('#cardPhone').value,
-        cardSns: document.querySelector('#cardSns').value,
-        cardPhoto: document.querySelector('#cardPhoto').files[0]
-    }
-    try {
-        await set(ref(db, `card/${uid}`), userData);
-        alert('명함이 생성되었습니다.');
-        window.location.href = `/view?id=${userId}`;
-    } catch (error) {
-        console.error('명함 생성 중 오류 발생:', error);
-        alert('오류가 발생했습니다.');
-    }
-}
+onValue(ref(db, `card/${id}/${key}`), (snapshot) => {
 
-const btnConfirm = document.querySelector('#btnConfirm');
-if (btnConfirm) {
-    btnConfirm.addEventListener('click', confirm);
+    let contents = []
+    contents = snapshot.val()
+    console.log(contents);
+    // 데이터바인딩
+    document.querySelector('#viewTit').textContent = contents.cardTit || ''
+    document.querySelector('#viewName').textContent = contents.cardName || ''
+    document.querySelector('#viewDir').textContent = contents.cardDir || ''
+    document.querySelector('#viewEmail').textContent = contents.cardEmail || ''
+    document.querySelector('#viewEmail').href = 'mailto:'+contents.cardEmail || ''
+    document.querySelector('#viewAdd').textContent = contents.cardAdd || ''
+    document.querySelector('#viewAdd').href = 'https://www.google.co.kr/maps/place/'+contents.cardAdd || 'https://www.google.co.kr/maps/place/'
+    document.querySelector('#viewPhone').textContent = contents.cardPhone || ''
+    document.querySelector('#viewPhone').href = 'tel:'+contents.cardPhone || ''
+    document.querySelector('#viewSns').textContent= contents.cardSns || ''
+    document.querySelector('#viewSns').href = contents.cardSns
+    document.querySelector('#viewPhoto').src = contents.cardPhoto || './images/user.png'
+})
+
+const btnList = document.querySelector('#btnList');
+if (btnList) {
+    btnList.addEventListener('click', ()=>{
+        window.location.href = `/list?id=${id}`
+    });
 }
 

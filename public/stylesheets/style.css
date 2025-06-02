@@ -19,7 +19,7 @@ footer .tit{font-size:0.8rem;}
 
 /* button */
 .btn{font-family: 'GmarketSansMedium';border: none;display: block;cursor: pointer;}
-.btnConfirm,.btnMaker,.btnPreview{width: 400px;padding: 15px 0;background: #556081;border-radius:5px;color:#fff;font-size: 15px;}
+.btnConfirm,.btnMaker,.btnPreview,.btnList{width: 400px;padding: 15px 0;background: #556081;border-radius:5px;color:#fff;font-size: 15px;}
 .btnKakao img{width: 300px;}
 .logout{float: right;margin-top:10px;padding: 5px 10px;}
 

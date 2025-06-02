@@ -95,7 +95,7 @@ const confirm = async(e) =>{
     const data = JSON.parse(localStorage.getItem('previewData'));
     const userData = {
         uid: id,
-        cardName: data.cardTit,
+        cardTit: data.cardTit,
         cardName: data.cardName,
         cardDir: data.cardDir,
         cardEmail: data.cardEmail,
@@ -108,7 +108,7 @@ const confirm = async(e) =>{
         const newCardRef = push(ref(db, `card/${id}/`)); // 고유 경로 생성
         await set(newCardRef, userData); 
         alert('명함이 생성되었습니다.');
-        window.location.href = `/view?id=${id}`;
+        window.location.href = `/list?id=${id}`;
     } catch (error) {
         console.error('명함 생성 중 오류 발생:', error);
         alert('오류가 발생했습니다.');
