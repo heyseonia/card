@@ -1,5 +1,4 @@
 
-const userId = localStorage.getItem("userId")
 
 // link
 const goToLink = (link,userId) => {

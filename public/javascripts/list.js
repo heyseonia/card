@@ -27,7 +27,6 @@ onValue(ref(db, `card/${id}`), (snapshot) => {
   cards.reverse().forEach(childSnapshot => {
     const card = childSnapshot.val();
     card.key = childSnapshot.key;
-    cards.push(card);
 
     const li = document.createElement('li');
     const a = document.createElement('a');
@@ -36,5 +35,10 @@ onValue(ref(db, `card/${id}`), (snapshot) => {
     li.appendChild(a);
     list.appendChild(li);
   });
+
+  // 명함없을경우
+  if(cards.length == 0){
+    window.location.href = `/maker?id=${id}`;
+  }
 
 })
