@@ -24,6 +24,7 @@ footer .tit{font-size:0.8rem;text-align: center;}
 /* button */
 .btn{font-family: 'GmarketSansMedium';border: none;display: block;cursor: pointer;}
 .btnConfirm,.btnMaker,.btnPreview,.btnList{width: 100%;padding: 15px 0;background: #556081;border-radius:5px;color:#fff;font-size: 15px;}
+.btnList{background: #fff;color: #556081;}
 .btnKakao img{width: 100%;}
 
 /* userInfo */
