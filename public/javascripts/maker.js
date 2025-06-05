@@ -69,7 +69,7 @@ function toggleView() {
             cardColor = data.cardColor
             document.querySelector('.nameCardPreView').style.cssText = `background: linear-gradient(${data.cardColor} 30%, #fff 30%);`
             document.querySelectorAll('.text').forEach(el => {
-                el.style.cssText = `color: ${data.cardColor};`;
+                el.style.cssText = `color: #333;`;
             });
         
             // 이미지 렌더링

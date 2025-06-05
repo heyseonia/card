@@ -32,7 +32,7 @@ onValue(ref(db, `card/${id}/${key}`), (snapshot) => {
 
     document.querySelector('.nameCardPreView').style.cssText = `background: linear-gradient(${contents.cardColor} 30%, #fff 30%);`
     document.querySelectorAll('.text').forEach(el => {
-        el.style.cssText = `color: ${contents.cardColor};`;
+        el.style.cssText = `color: #333;`;
     });
 
 })
