@@ -29,6 +29,12 @@ onValue(ref(db, `card/${id}/${key}`), (snapshot) => {
     document.querySelector('#viewSns').textContent= contents.cardSns || ''
     document.querySelector('#viewSns').href = contents.cardSns
     document.querySelector('#viewPhoto').src = contents.cardPhoto || './images/user.png'
+
+    document.querySelector('.nameCardPreView').style.cssText = `background: linear-gradient(${contents.cardColor} 30%, #fff 30%);`
+    document.querySelectorAll('.text').forEach(el => {
+        el.style.cssText = `color: ${contents.cardColor};`;
+    });
+
 })
 
 const btnList = document.querySelector('#btnList');
